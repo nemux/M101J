@@ -1,0 +1,11 @@
+$mongoimport -d students -c grades < grades.ef42a2b3e7ff.json
+$mongo students
+> db.grades.find({score:{$gte:65}, type:"exam"}).sort({score:1}).limit(1).pretty()
+{
+	"_id" : ObjectId("50906d7fa3c412bb040eb5cf"),
+	"student_id" : 22,
+	"type" : "exam",
+	"score" : 65.02518811936324
+}
+
+
